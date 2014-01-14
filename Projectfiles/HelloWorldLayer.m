@@ -43,6 +43,10 @@ CCSprite* ship2;
     
     ship1.position = ccp(ship1.position.x + 100 * dt, ship1.position.y);
     
+    if (ship1.position.x > 480 + 32) {
+        ship1.position = ccp(-32, ship1.position.y);
+    }
+    
 }
 
 
