@@ -47,6 +47,21 @@ CCSprite* ship2;
         ship1.position = ccp(-32, ship1.position.y);
     }
     
+    // Create instance of Input of Kobolds touch processor
+    
+    KKInput* input = [KKInput sharedInput];
+    
+    // Create a point, by asking input manager where touch was registered
+    CGPoint pos = [input locationOfAnyTouchInPhase:KKTouchPhaseBegan];
+    
+    // Input will return 0,0 if no touch has been registered
+    
+    if (pos.x != 0 && pos.y != 0) {
+        
+        [ship2 runAction: [CCMoveTo actionWithDuration:0.5 position:pos]];
+        
+    }
+    
 }
 
 
